@@ -1,0 +1,56 @@
+Fontebecci,43.344748,11.305794
+Siena Montanini,43.32205, 11.329312
+Siena Porta Pispini,43.316679, 11.344959
+Colle di Val d'Elsa,43.422941, 11.126644
+Gracciano,43.402844, 11.13444
+Poggibonsi,43.470433, 11.146488
+Bellavista,43.440984, 11.16148
+Castelnuovo Berardenga,43.347944, 11.504916
+Steccaia,43.540554, 11.02804
+Badesse,43.38381, 11.272017
+Bucine Ambra,43.413968, 11.601831
+Castellina in Chianti,43.474671, 11.27631
+Siena Logge del Papa,43.31813, 11.335028
+Bancomat Postierla,43.316232, 11.329797
+Bancomat Cast.Scalo,43.4056807, 11.2116403
+Siena Le Grondaie,43.331975, 11.3254893
+San Donato,43.535883, 11.2382695
+Montespertoli,43.6450101, 11.0724068
+Firenze Piazza Duomo,43.772651, 11.257562
+Mercatale,43.6356609, 11.2290405,25
+Cerbaia,43.6845651, 11.1273032
+Tavarnelle,43.563296, 11.173816
+Sambuca,43.5694045, 11.2161552
+San Donato,43.535883, 11.2382695
+Scandicci,43.7627814, 11.1753695
+Firenze Legnaia,43.7705919, 11.213138
+Firenze Ferrucci,43.7638998, 11.2799796
+Firenze Gordigiani,43.7882533, 11.2358001
+Firenze Savonarola,43.7815521, 11.2676724
+Barberino Val d'Elsa,43.4881402, 11.1246028
+Siena Coroncina,43.29632384474638,11.341023445129395
+Firenze Campo di Marte,43.7767626, 11.2872932
+Empoli,43.7216413, 10.9500698
+Campi Bisenzio Buozzi,43.8206481, 11.1398927
+Calenzano,43.8593202, 11.1589409
+Firenze Belfiore,43.7809944, 11.2421264
+Prato,43.8651312, 11.111521
+Sesto Fiorentino,43.8303955, 11.2076451
+Campi Bisenzio Magenta,43.8228641, 11.1218478
+Firenze Traversari,43.7587639, 11.2883581
+Fiesole,43.8068681,11.2927174
+
+Atm Intelligente Bucine Ambra,43.414869,11.602747
+Atm Intelligente Firenze Sottopasso,43.775310,11.249370
+Atm Ortimino presso Circolo I'Poggio,43.634680,11.019995
+Atm Intelligente Martignana,43.674254,10.990246
+Atm Monteriggioni Castello - Largo Fonte Branda,43.390110,11.222539
+Atm Intelligente San Casciano Via Roma,43.657671,11.184754
+Atm San Casciano Coop,43.660171,11.184935
+Atm Siena Pantaneto,43.318839,11.333461
+Atm Siena Via di Città,43.316375,11.329974
+Atm Siena Castellina Scalo,43.405309,11.210925
+Atm Siena presso Novartis,43.340436,11.305753
+
+Videosportello ATM test,43.601316,11.277604
+
