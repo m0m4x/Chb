@@ -34,7 +34,7 @@
     
     // Ios 6
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets  = NO;
     
     //Immagine Barra

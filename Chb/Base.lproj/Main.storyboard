@@ -466,6 +466,14 @@
             </objects>
             <point key="canvasLocation" x="1314" y="849"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Uo7-xy-7YH">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="PN2-Oc-ogu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CaQ-qv-LxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1395" y="-529"/>
+        </scene>
         <!--Web View Controller-->
         <scene sceneID="tIw-m4-l3T">
             <objects>
@@ -513,10 +521,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iHH-lE-pRZ"/>
+                    <connections>
+                        <outlet property="webView" destination="RMc-Wo-eIj" id="S5S-Eq-vSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXi-7O-7ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="26"/>
+            <point key="canvasLocation" x="1862" y="46"/>
         </scene>
     </scenes>
     <resources>

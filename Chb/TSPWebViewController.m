@@ -12,6 +12,8 @@
 #import "GetData.h"
 
 
+#import "PageViewController.h"
+
 @interface TSPWebViewController ()
 
 @property GetData *dataObj;
@@ -20,7 +22,10 @@
 
 @end
 
+
 @implementation TSPWebViewController
+
+@synthesize webView = _webView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +40,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //Set Delegate
+    self.webView.delegate = self;
+    //UIWebView *webview = (UIWebView*) [self.view viewWithTag:50];
+    //[webview setDelegate:self];
     
     //Title
     self.title= self.info_title;
@@ -206,6 +216,37 @@
     [userDefaults synchronize];
     
 }
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    NSLog(@"aaa");
+    
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+
+    [self vediPDF];
+    
+    
+    return YES;
+    
+}
+
+
+
+
+-(void) vediPDF{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BILANCIO_WEB4_1536" ofType:@"pdf"];
+    PageViewController *page = [[PageViewController alloc] initWithPDFAtPath:path];
+    
+    [self.navigationController pushViewController:page animated:YES];
+    //[self presentViewController:page animated:YES completion:NULL];
+    
+}
+
 
 
 - (void)didReceiveMemoryWarning

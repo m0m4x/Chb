@@ -16,11 +16,6 @@
 		5639748018FB3BF90068AB08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5639747E18FB3BF90068AB08 /* Main.storyboard */; };
 		5639748318FB3BF90068AB08 /* TSPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5639748218FB3BF90068AB08 /* TSPViewController.m */; };
 		5639748518FB3BF90068AB08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5639748418FB3BF90068AB08 /* Images.xcassets */; };
-		5639748C18FB3BF90068AB08 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5639748B18FB3BF90068AB08 /* XCTest.framework */; };
-		5639748D18FB3BF90068AB08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5639746C18FB3BF90068AB08 /* Foundation.framework */; };
-		5639748E18FB3BF90068AB08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5639747018FB3BF90068AB08 /* UIKit.framework */; };
-		5639749618FB3BF90068AB08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5639749418FB3BF90068AB08 /* InfoPlist.strings */; };
-		5639749818FB3BF90068AB08 /* ChbTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5639749718FB3BF90068AB08 /* ChbTests.m */; };
 		563974A418FB72610068AB08 /* logo_chb_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 563974A318FB72610068AB08 /* logo_chb_s.png */; };
 		563974A718FB7A110068AB08 /* TSPTouchUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 563974A618FB7A110068AB08 /* TSPTouchUIView.m */; };
 		563974AA18FB82B60068AB08 /* TSPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563974A918FB82B60068AB08 /* TSPWebViewController.m */; };
@@ -28,7 +23,6 @@
 		563974B618FBA3330068AB08 /* under_layer.png in Resources */ = {isa = PBXBuildFile; fileRef = 563974B518FBA3330068AB08 /* under_layer.png */; };
 		563974BE18FBB1020068AB08 /* TSPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 563974BD18FBB1020068AB08 /* TSPMapViewController.m */; };
 		563974C018FBB6790068AB08 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563974BF18FBB6790068AB08 /* MapKit.framework */; };
-		563974C218FBB6830068AB08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563974C118FBB6830068AB08 /* CoreLocation.framework */; };
 		56D509131901DE5100C5847A /* chbloading.png in Resources */ = {isa = PBXBuildFile; fileRef = 56D509121901DE5000C5847A /* chbloading.png */; };
 		56D5091D1903473200C5847A /* filiali.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56D5091C1903473200C5847A /* filiali.txt */; };
 		56D509261903783100C5847A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D509251903783100C5847A /* Reachability.m */; };
@@ -66,17 +60,14 @@
 		56DBBC611904AB55009B6E15 /* pin_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DBBC571904AB55009B6E15 /* pin_yellow.png */; };
 		56DBBC631904AE55009B6E15 /* pin_hres_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DBBC621904AE55009B6E15 /* pin_hres_red.png */; };
 		56DBBC651904DDCA009B6E15 /* noise_hres.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DBBC641904DDCA009B6E15 /* noise_hres.png */; };
+		56DBBC711905D7A1009B6E15 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DBBC6A1905D7A1009B6E15 /* ContentViewController.m */; };
+		56DBBC721905D7A1009B6E15 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DBBC6C1905D7A1009B6E15 /* PageViewController.m */; };
+		56DBBC731905D7A1009B6E15 /* PDFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DBBC6E1905D7A1009B6E15 /* PDFScrollView.m */; };
+		56DBBC741905D7A1009B6E15 /* TiledPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DBBC701905D7A1009B6E15 /* TiledPDFView.m */; };
+		56DBBC761905D9CB009B6E15 /* PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56DBBC751905D9CB009B6E15 /* PDF.pdf */; };
+		56DBBC791905DBA0009B6E15 /* TSPWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DBBC781905DBA0009B6E15 /* TSPWebView.m */; };
+		56DBBC7B1905F294009B6E15 /* BILANCIO_WEB4_1536.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 56DBBC7A1905F294009B6E15 /* BILANCIO_WEB4_1536.pdf */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5639748F18FB3BF90068AB08 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5639746118FB3BF90068AB08 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5639746818FB3BF90068AB08;
-			remoteInfo = Chb;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5639746918FB3BF90068AB08 /* Chb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +84,6 @@
 		5639748118FB3BF90068AB08 /* TSPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSPViewController.h; sourceTree = "<group>"; };
 		5639748218FB3BF90068AB08 /* TSPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSPViewController.m; sourceTree = "<group>"; };
 		5639748418FB3BF90068AB08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5639748A18FB3BF90068AB08 /* ChbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639748B18FB3BF90068AB08 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5639749318FB3BF90068AB08 /* ChbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChbTests-Info.plist"; sourceTree = "<group>"; };
 		5639749518FB3BF90068AB08 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -152,6 +142,19 @@
 		56DBBC571904AB55009B6E15 /* pin_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_yellow.png; sourceTree = "<group>"; };
 		56DBBC621904AE55009B6E15 /* pin_hres_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin_hres_red.png; sourceTree = "<group>"; };
 		56DBBC641904DDCA009B6E15 /* noise_hres.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noise_hres.png; sourceTree = "<group>"; };
+		56DBBC661905D5DF009B6E15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56DBBC691905D7A1009B6E15 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		56DBBC6A1905D7A1009B6E15 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		56DBBC6B1905D7A1009B6E15 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		56DBBC6C1905D7A1009B6E15 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		56DBBC6D1905D7A1009B6E15 /* PDFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFScrollView.h; sourceTree = "<group>"; };
+		56DBBC6E1905D7A1009B6E15 /* PDFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFScrollView.m; sourceTree = "<group>"; };
+		56DBBC6F1905D7A1009B6E15 /* TiledPDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiledPDFView.h; sourceTree = "<group>"; };
+		56DBBC701905D7A1009B6E15 /* TiledPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiledPDFView.m; sourceTree = "<group>"; };
+		56DBBC751905D9CB009B6E15 /* PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PDF.pdf; sourceTree = "<group>"; };
+		56DBBC771905DBA0009B6E15 /* TSPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPWebView.h; sourceTree = "<group>"; };
+		56DBBC781905DBA0009B6E15 /* TSPWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPWebView.m; sourceTree = "<group>"; };
+		56DBBC7A1905F294009B6E15 /* BILANCIO_WEB4_1536.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BILANCIO_WEB4_1536.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,21 +162,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563974C218FBB6830068AB08 /* CoreLocation.framework in Frameworks */,
 				563974C018FBB6790068AB08 /* MapKit.framework in Frameworks */,
 				5639746F18FB3BF90068AB08 /* CoreGraphics.framework in Frameworks */,
 				5639747118FB3BF90068AB08 /* UIKit.framework in Frameworks */,
 				5639746D18FB3BF90068AB08 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5639748718FB3BF90068AB08 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5639748C18FB3BF90068AB08 /* XCTest.framework in Frameworks */,
-				5639748E18FB3BF90068AB08 /* UIKit.framework in Frameworks */,
-				5639748D18FB3BF90068AB08 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				5639746918FB3BF90068AB08 /* Chb.app */,
-				5639748A18FB3BF90068AB08 /* ChbTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +193,7 @@
 		5639746B18FB3BF90068AB08 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56DBBC661905D5DF009B6E15 /* QuartzCore.framework */,
 				563974C118FBB6830068AB08 /* CoreLocation.framework */,
 				563974BF18FBB6790068AB08 /* MapKit.framework */,
 				5639746C18FB3BF90068AB08 /* Foundation.framework */,
@@ -215,6 +207,7 @@
 		5639747218FB3BF90068AB08 /* Chb */ = {
 			isa = PBXGroup;
 			children = (
+				56DBBC681905D613009B6E15 /* PDF */,
 				563974B118FB909D0068AB08 /* iPad */,
 				563974B018FB8EAF0068AB08 /* Classi */,
 				563974C318FBC1990068AB08 /* Immagini */,
@@ -222,6 +215,8 @@
 				5639747B18FB3BF90068AB08 /* TSPAppDelegate.h */,
 				5639747C18FB3BF90068AB08 /* TSPAppDelegate.m */,
 				5639747E18FB3BF90068AB08 /* Main.storyboard */,
+				56DBBC771905DBA0009B6E15 /* TSPWebView.h */,
+				56DBBC781905DBA0009B6E15 /* TSPWebView.m */,
 				563974A818FB82B60068AB08 /* TSPWebViewController.h */,
 				563974A918FB82B60068AB08 /* TSPWebViewController.m */,
 				563974BC18FBB1020068AB08 /* TSPMapViewController.h */,
@@ -325,6 +320,7 @@
 		563974C418FBC1A50068AB08 /* Contenuti */ = {
 			isa = PBXGroup;
 			children = (
+				56DBBC7A1905F294009B6E15 /* BILANCIO_WEB4_1536.pdf */,
 				56DBBC3A19048CE4009B6E15 /* bilancio.htm */,
 				56DBBC4C1904A140009B6E15 /* 25.html */,
 				56DBBC3B19048CE4009B6E15 /* chb.htm */,
@@ -334,6 +330,22 @@
 				56D5091C1903473200C5847A /* filiali.txt */,
 			);
 			name = Contenuti;
+			sourceTree = "<group>";
+		};
+		56DBBC681905D613009B6E15 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				56DBBC751905D9CB009B6E15 /* PDF.pdf */,
+				56DBBC691905D7A1009B6E15 /* ContentViewController.h */,
+				56DBBC6A1905D7A1009B6E15 /* ContentViewController.m */,
+				56DBBC6B1905D7A1009B6E15 /* PageViewController.h */,
+				56DBBC6C1905D7A1009B6E15 /* PageViewController.m */,
+				56DBBC6D1905D7A1009B6E15 /* PDFScrollView.h */,
+				56DBBC6E1905D7A1009B6E15 /* PDFScrollView.m */,
+				56DBBC6F1905D7A1009B6E15 /* TiledPDFView.h */,
+				56DBBC701905D7A1009B6E15 /* TiledPDFView.m */,
+			);
+			name = PDF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,24 +368,6 @@
 			productReference = 5639746918FB3BF90068AB08 /* Chb.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5639748918FB3BF90068AB08 /* ChbTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5639749E18FB3BF90068AB08 /* Build configuration list for PBXNativeTarget "ChbTests" */;
-			buildPhases = (
-				5639748618FB3BF90068AB08 /* Sources */,
-				5639748718FB3BF90068AB08 /* Frameworks */,
-				5639748818FB3BF90068AB08 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5639749018FB3BF90068AB08 /* PBXTargetDependency */,
-			);
-			name = ChbTests;
-			productName = ChbTests;
-			productReference = 5639748A18FB3BF90068AB08 /* ChbTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -383,11 +377,6 @@
 				CLASSPREFIX = TSP;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Massimo Zanini";
-				TargetAttributes = {
-					5639748918FB3BF90068AB08 = {
-						TestTargetID = 5639746818FB3BF90068AB08;
-					};
-				};
 			};
 			buildConfigurationList = 5639746418FB3BF90068AB08 /* Build configuration list for PBXProject "Chb" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -404,7 +393,6 @@
 			projectRoot = "";
 			targets = (
 				5639746818FB3BF90068AB08 /* Chb */,
-				5639748918FB3BF90068AB08 /* ChbTests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,6 +422,7 @@
 				5639747718FB3BF90068AB08 /* InfoPlist.strings in Resources */,
 				56DBBC581904AB55009B6E15 /* pin_blue_ipad.png in Resources */,
 				563974B618FBA3330068AB08 /* under_layer.png in Resources */,
+				56DBBC7B1905F294009B6E15 /* BILANCIO_WEB4_1536.pdf in Resources */,
 				56DBBC29190455B8009B6E15 /* chb.png in Resources */,
 				56DBBC5C1904AB55009B6E15 /* pin_pink_ipad.png in Resources */,
 				56DBBC2C190459F0009B6E15 /* notizie_off.png in Resources */,
@@ -451,17 +440,10 @@
 				56DBBC1619044AFB009B6E15 /* filiali_off.png in Resources */,
 				56DBBC601904AB55009B6E15 /* pin_yellow_ipad.png in Resources */,
 				56DBBC5E1904AB55009B6E15 /* pin_red_ipad.png in Resources */,
+				56DBBC761905D9CB009B6E15 /* PDF.pdf in Resources */,
 				56DBBC311904685D009B6E15 /* bilancio_off.png in Resources */,
 				56DBBC4319048CE4009B6E15 /* notizie.htm in Resources */,
 				5639748018FB3BF90068AB08 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5639748818FB3BF90068AB08 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5639749618FB3BF90068AB08 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,29 +460,18 @@
 				563974BE18FBB1020068AB08 /* TSPMapViewController.m in Sources */,
 				563974A718FB7A110068AB08 /* TSPTouchUIView.m in Sources */,
 				563974AF18FB8C3E0068AB08 /* FindUIViewController.m in Sources */,
+				56DBBC721905D7A1009B6E15 /* PageViewController.m in Sources */,
+				56DBBC791905DBA0009B6E15 /* TSPWebView.m in Sources */,
+				56DBBC711905D7A1009B6E15 /* ContentViewController.m in Sources */,
+				56DBBC741905D7A1009B6E15 /* TiledPDFView.m in Sources */,
 				5639747918FB3BF90068AB08 /* main.m in Sources */,
 				563974AA18FB82B60068AB08 /* TSPWebViewController.m in Sources */,
+				56DBBC731905D7A1009B6E15 /* PDFScrollView.m in Sources */,
 				56DBBC07190427D8009B6E15 /* GetData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5639748618FB3BF90068AB08 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5639749818FB3BF90068AB08 /* ChbTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5639749018FB3BF90068AB08 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5639746818FB3BF90068AB08 /* Chb */;
-			targetProxy = 5639748F18FB3BF90068AB08 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5639747518FB3BF90068AB08 /* InfoPlist.strings */ = {
@@ -633,46 +604,6 @@
 			};
 			name = Release;
 		};
-		5639749F18FB3BF90068AB08 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chb.app/Chb";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Chb/Chb-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ChbTests/ChbTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		563974A018FB3BF90068AB08 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chb.app/Chb";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Chb/Chb-Prefix.pch";
-				INFOPLIST_FILE = "ChbTests/ChbTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -690,15 +621,6 @@
 			buildConfigurations = (
 				5639749C18FB3BF90068AB08 /* Debug */,
 				5639749D18FB3BF90068AB08 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5639749E18FB3BF90068AB08 /* Build configuration list for PBXNativeTarget "ChbTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5639749F18FB3BF90068AB08 /* Debug */,
-				563974A018FB3BF90068AB08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
