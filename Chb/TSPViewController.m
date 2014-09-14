@@ -38,14 +38,19 @@
     self.automaticallyAdjustsScrollViewInsets  = NO;
     
     //Immagine Barra
-    UIImage *image = [UIImage imageNamed: @"logo_chb_s.png"];
+    /*UIImage *image = [UIImage imageNamed: @"logo_chb_s.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.frame = CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width-20, self.navigationController.navigationBar.frame.size.height-20 );
     self.navigationItem.titleView = imageView;
+    */
+    
+    //Disabilita Barra superiore
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
     
     //BackGround
-    UIImage *bg = [UIImage imageNamed:@"noise"];
+    UIImage *bg = [UIImage imageNamed:@"terraViBil"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:bg];
     
     //Testo Indietro

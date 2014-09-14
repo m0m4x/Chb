@@ -56,39 +56,39 @@
     switch (tag) {
         case 100:
             if([event isEqualToString:@"on"])
-                return @"chb.png";
+                return @"f1.png";
             else
-                return @"chb_off.png";
+                return @"f1_off.png";
             break;
         case 200:
             if([event isEqualToString:@"on"])
-                return @"bilancio.png";
+                return @"f2.png";
             else
-                return @"bilancio_off.png";
+                return @"f2_off.png";
             break;
         case 300:
             if([event isEqualToString:@"on"])
-                return @"filiali.png";
+                return @"f3.png";
             else
-                return @"filiali_off.png";
+                return @"f3_off.png";
             break;
         case 400:
             if([event isEqualToString:@"on"])
-                return @"iniziative.png";
+                return @"f4.png";
             else
-                return @"iniziative_off.png";
+                return @"f4_off.png";
             break;
         case 500:
             if([event isEqualToString:@"on"])
-                return @"governance.png";
+                return @"f5.png";
             else
-                return @"governance_off.png";
+                return @"f5_off.png";
             break;
         case 600:
             if([event isEqualToString:@"on"])
-                return @"notizie.png";
+                return @"f6.png";
             else
-                return @"notizie_off.png";
+                return @"f6_off.png";
             break;
         default:
             return @"";
