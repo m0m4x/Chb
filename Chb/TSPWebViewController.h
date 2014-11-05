@@ -20,5 +20,5 @@
 @property NSString* info_title; //1 - titolo
 @property NSString* info_file;  //1 - file da aprire
 
--(void) vediPDF;
+-(void) vediPDF:(NSString*) url;
 @end

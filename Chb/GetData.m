@@ -16,10 +16,11 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
 // Gestisci UI
 
 // View Caricamento
-- (void) loadResources:(NSArray*)resources completion:(void (^)(void))completionBlock
+- (void) loadResources:(void (^)(void))completionBlock
 {
     
     //Espandi e Avvia indicatore
+    [self.loading setHidden:NO];
     // border radius
     [self.loading.layer setCornerRadius:5.0f];
     // border
@@ -37,11 +38,15 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
     void (^exeBlock)(void);
     exeBlock = ^{
         
+        //Il lavoro viene fatto all'interno della completionBlock
+        //in definizione funzione: (NSArray*)resources
+        /*
         //Scarica Risorse
         for (NSString *res in resources) {
             NSArray* chunk = [res componentsSeparatedByString:@"." ];
             [self getPathFor:[chunk objectAtIndex:0] fileType:[chunk objectAtIndex:1] initRes:YES];
         }
+        */
         
         //Completa
         completionBlock();
@@ -61,14 +66,17 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
     [self.indicator stopAnimating];
     [self.loading setHidden:YES];
     
+    
 }
 
 
 
 // Gestisci richieste DATI
-- (NSString*) getPathFor:(NSString*)file fileType:(NSString*)file_type initRes:(bool)onlineUpdate {
+- (NSString*) getPathFor:(NSString*)file fileType:(NSString*)file_type checkOnline:(bool)onlineUpdate {
     
     NSString *filename = [[file stringByAppendingString:@"."] stringByAppendingString:file_type];
+    
+    NSLog(@"getPathFor: %@", filename);
     
     //Check Internet
     BOOL doOffiline = false;
@@ -77,10 +85,19 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
         NetworkStatus networkStatus = [networkReachability currentReachabilityStatus];
         
         if (networkStatus != NotReachable) {
-            NSLog(@"There IS internet connection");
+            //NSLog(@"getPathFor: test connection ok");
             
-            //1 Download new
-            NSURL *url = [NSURL URLWithString:[serverURI stringByAppendingString:filename]];
+            //Controlla URL
+            NSString *url_req;
+            NSArray* test = [filename componentsSeparatedByString:@"/" ];
+            if([test[0] isEqual:@"http:"]){
+                url_req=filename;
+            }else{
+                url_req=[serverURI stringByAppendingString:filename];
+            }
+            
+            //Download
+            NSURL *url = [NSURL URLWithString:url_req];
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
             [request setTimeoutInterval: 3.0]; // Will timeout after 2 seconds
             request.cachePolicy=NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
@@ -93,13 +110,15 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
             BOOL isInvalid = NO;
             if ([response respondsToSelector:@selector(statusCode)])
             {
-                NSLog(@"didReceiveResponse statusCode with %@",
-                      [NSHTTPURLResponse localizedStringForStatusCode: [response statusCode]]);
+                //NSLog(@"getPathFor: downloading resource statusCode %@",[NSHTTPURLResponse localizedStringForStatusCode: [response statusCode]]);
+                
                 if ([response statusCode] == 404)
                 {
                     isInvalid = YES;
                 }
+                
             }else{
+                
                 if(urlData == nil)
                     isInvalid = YES;
                 if(error!=nil)
@@ -108,17 +127,26 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
             
             if (!isInvalid)
             {
+                //NSLog(@"getPathFor: res found online!");
+                
+                //Componi nome in Cache
                 NSArray   *myPathList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
                 NSString  *myPath = [myPathList objectAtIndex:0];
                 
-                NSString  *filePath = [NSString stringWithFormat:@"%@/%@", myPath,filename];
+                NSArray* chunk = [filename componentsSeparatedByString:@"/" ];
+                
+                NSString  *filePath = [NSString stringWithFormat:@"%@/%@",
+                                       myPath,[chunk lastObject]];
+                
                 [urlData writeToFile:filePath atomically:YES];
                 
+                //NSLog(@"getPathFor: res online cached to: %@", filePath);
                 return filePath;
             }
             else
             {
-                NSLog(@"ERROR DOWNLOADING DATA");
+                //NSLog(@"getPathFor: res not available online!");
+                
                 doOffiline = true;
             }
             
@@ -140,6 +168,7 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
              */
             
         } else {
+            //NSLog(@"getPathFor: test connection fail");
             doOffiline = true;
         }
     } else {
@@ -147,22 +176,34 @@ const NSString *serverURI = @"http://shap.no-ip.biz:50026/chb/";
     }
     
     if (doOffiline) {
-        NSLog(@"There IS NO internet connection");
+        //NSLog(@"getPathFor: reverting to offline...");
         
-        //Check Cached
+        //Controllo in Cache
         NSArray *myPathList = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
         NSString *myPath    = [myPathList  objectAtIndex:0];
         
         myPath = [myPath stringByAppendingPathComponent:filename];
         if([[NSFileManager defaultManager] fileExistsAtPath:myPath])
         {
-            //2 Return Cached
+            //2 Prendi quella in Cache
+            //NSLog(@"getPathFor: res offline cached: %@",myPath);
             return myPath;
         }
         else
         {
-            //3 Prendi Offline
-            return [[NSBundle mainBundle] pathForResource:file ofType:file_type];
+            //3 Prendi versione Bundle (se esiste)
+            NSString *local_path = [[NSBundle mainBundle] pathForResource:file ofType:file_type];
+            if([[NSFileManager defaultManager] fileExistsAtPath:local_path] == TRUE)
+            {
+                //NSLog(@"getPathFor: res offline local: %@",local_path);
+                return local_path;
+            }
+            else
+            {
+                //NSLog(@"getPathFor: Error: res not found!");
+                return nil;
+            }
+            
         }
         
     }

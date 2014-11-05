@@ -21,7 +21,8 @@
     
     //Cambia Immagine
     for (id subview in self.subviews) {
-        if ([subview isKindOfClass:[UIImageView class]]) {
+        if ([subview isKindOfClass:[UIImageView class]] &&
+            [subview tag] == self.tag + 10) {
             UIImageView *theView = (UIImageView*)subview;
             UIImage *image = [UIImage imageNamed:[self imageName:self.tag perEvento:@"off"]];
             [theView setImage:image];
@@ -36,7 +37,8 @@
     
     //Ripristina Immagine
     for (id subview in self.subviews) {
-        if ([subview isKindOfClass:[UIImageView class]]) {
+        if ([subview isKindOfClass:[UIImageView class]] &&
+            [subview tag] == self.tag + 10) {
             UIImageView *theView = (UIImageView*)subview;
             
             UIImage *image = [UIImage imageNamed:[self imageName:self.tag perEvento:@"on"]];

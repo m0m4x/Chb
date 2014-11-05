@@ -1,0 +1,5 @@
+Bilancio Sociale 2013,http://www.chiantibanca.it/data/media/bilancio013_2511.pdf
+Bilancio Sociale 2013 Opt,http://www.chiantibanca.it/data/media/bilancio013Ibook_2512.pdf
+Networking Overview,https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/NetworkingOverview.pdf
+iPhone User Guide,http://manuals.info.apple.com/MANUALS/1000/MA1565/en_US/iphone_user_guide.pdf
+Big,http://www.nbb.be/DOC/BA/PDF7MB/2012/201208900045_2.pdf

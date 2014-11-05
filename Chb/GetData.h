@@ -13,8 +13,8 @@
 @property UIView *loading;
 @property UIActivityIndicatorView *indicator;
 
--(void) loadResources:(NSArray*)resources completion:(void (^)(void))completionBlock;
+-(void) loadResources:(void (^)(void))completionBlock;
 
--(NSString*) getPathFor:(NSString*)file fileType:(NSString*)file_type initRes:(bool)onlineUpdate;
+-(NSString*) getPathFor:(NSString*)file fileType:(NSString*)file_type checkOnline:(bool)onlineUpdate;
 
 @end

@@ -121,9 +121,9 @@
     [thePageViewController didMoveToParentViewController:self];
     
     //IOS6
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets  = NO;
+    self.automaticallyAdjustsScrollViewInsets  = YES;
     
     //BackGround
     UIImage *bg = [UIImage imageNamed:@"noise"];

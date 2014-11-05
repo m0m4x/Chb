@@ -8,6 +8,8 @@
 
 #import "TSPViewController.h"
 #import "TSPWebViewController.h"
+#import "TSPBilViewController.h"
+
 
 @interface TSPViewController ()
 
@@ -15,6 +17,8 @@
 
 @property UIView *loading;
 @property UIActivityIndicatorView *indicator;
+
+@property TSPBilViewController *vc_b;
 
 - (void) closeThings;
 
@@ -33,60 +37,44 @@
     [self loadThings];
     
     // Ios 6
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets  = NO;
     
-    //Immagine Barra
-    /*UIImage *image = [UIImage imageNamed: @"logo_chb_s.png"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.frame = CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width-20, self.navigationController.navigationBar.frame.size.height-20 );
-    self.navigationItem.titleView = imageView;
-    */
-    
-    //Disabilita Barra superiore
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
+    //Barra superiore
+        //Disabilita
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        //Testo Indietro
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     
     //BackGround
-    UIImage *bg = [UIImage imageNamed:@"terraViBil"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bg];
-    
-    //Testo Indietro
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [backgroundImage setImage:[UIImage imageNamed:@"noise"]];
+    [backgroundImage setContentMode:UIViewContentModeScaleAspectFill];
+    [self.view insertSubview:backgroundImage atIndex:0];
     
     //Metti testo a label
-    UILabel *label1 = (UILabel*) [self.view viewWithTag:110];
-    UILabel *label2 = (UILabel*) [self.view viewWithTag:210];
-    UILabel *label3 = (UILabel*) [self.view viewWithTag:310];
-    UILabel *label4 = (UILabel*) [self.view viewWithTag:410];
-    UILabel *label5 = (UILabel*) [self.view viewWithTag:510];
-    UILabel *label6 = (UILabel*) [self.view viewWithTag:610];
-    label1.numberOfLines = 2;
-    label2.numberOfLines = 2;
-    label3.numberOfLines = 2;
-    label4.numberOfLines = 2;
-    label5.numberOfLines = 2;
-    label6.numberOfLines = 2;
-    label1.text = @"ChiantiBanca\n in Breve";
-    label2.text = @"Il Bilancio\n ";
-    label3.text = @"Le Filiali\n ";
-    label4.text = @"Iniziative\nSociali";
-    label5.text = @"Governance\n ";
-    label6.text = @"Notizie\n ";
+    UILabel *label1 = (UILabel*) [self.view viewWithTag:130];
+    UILabel *label2 = (UILabel*) [self.view viewWithTag:230];
+    UILabel *label3 = (UILabel*) [self.view viewWithTag:330];
+    UILabel *label4 = (UILabel*) [self.view viewWithTag:430];
+    UILabel *label5 = (UILabel*) [self.view viewWithTag:530];
+    UILabel *label6 = (UILabel*) [self.view viewWithTag:630];
+    label1.numberOfLines = 1;
+    label2.numberOfLines = 1;
+    label3.numberOfLines = 1;
+    label4.numberOfLines = 1;
+    label5.numberOfLines = 1;
+    label6.numberOfLines = 1;
+    label1.text = @"numeri";
+    label2.text = @"governance";
+    label3.text = @"bilancio";
+    label4.text = @"sociale";
+    label5.text = @"filiali";
+    label6.text = @"notizie";
     
-    
+    //Tasto Favoriti
     [self prepareFavBtn];
-    
-    //Trash
-    /*
-     CGRect screenRect = [[UIScreen mainScreen] bounds];
-     CGFloat screenWidth = screenRect.size.width;
-     CGFloat screenHeight = screenRect.size.height;
-     */
-    //[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[imageView]-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
-    
 
 }
 
@@ -138,17 +126,35 @@
 {
     NSLog(@"-doBtnPressed");
     
+   
     self.btn_type = type;
     switch (type) {
         case 100:
         case 200:
         case 400:
-        case 500:
         case 600:
             //webview
             [self performSegueWithIdentifier: @"btn_web" sender: self];
             break;
         case 300:
+        {
+            //bilanci
+            //[self performSegueWithIdentifier: @"btn_bil" sender: self];
+            
+            if(self.vc_b == nil){
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                self.vc_b = [storyboard instantiateViewControllerWithIdentifier:@"bilancio"];
+                //[self.vc_b setModalPresentationStyle:UIModalPresentationFullScreen];
+                //[self.vc_b setModalTransitionStyle:ui];
+            }
+            //[self presentModalViewController:self.vc_b animated:YES ];
+            //[self presentViewController:self.vc_b animated:YES completion:nil];
+            [self.navigationController pushViewController:self.vc_b animated:YES];
+            
+        }
+            
+            break;
+        case 500:
             //mappa
             [self performSegueWithIdentifier: @"btn_map" sender: self];
             break;

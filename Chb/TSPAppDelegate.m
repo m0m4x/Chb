@@ -10,8 +10,23 @@
 
 @implementation TSPAppDelegate
 
+-(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler{
+    
+    NSLog(@"COMPLETION HANDLER APP DELEGATE ???");
+    self.backgroundTransferCompletionHandler = completionHandler;
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //PER Abilitare alle notifiche
+    //Register for notifications
+    /*
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    */
+    
     // Override point for customization after application launch.
     return YES;
 }

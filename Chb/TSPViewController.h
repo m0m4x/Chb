@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TSPViewController : UIViewController
+
+
 - (void) doBtnPressed:(NSInteger) type;
 - (void) prepareFavBtn;
 @end

@@ -46,25 +46,44 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //Caricamento Risorse
+    //Oggetti
     self.dataObj = [GetData alloc];
     self.dataObj.loading = (UIView*) [self.view viewWithTag:50];
     self.dataObj.indicator = (UIActivityIndicatorView*) [self.view viewWithTag:60];
-    [self.dataObj loadResources:[NSArray arrayWithObjects:@"filiali.txt", nil] completion:^{
+    
+    UIImageView *bg = (UIImageView*) [self.view viewWithTag:3];
+    UILabel *label_title = (UILabel *)[self.view viewWithTag:30];
+    
+    UIButton *button_back = (UIButton *)[self.view viewWithTag:5];
+
+    //Imposta Titolo
+    self.title = @"Le Filiali";
+    label_title.text = @"Le Filiali";
+    
+    //Imposta Mappa
+    self.mapView.mapType = MKMapTypeStandard;
+    
+    //Tasto Indietro
+    [button_back setImage:[UIImage imageNamed:@"icon-back.png"] forState:UIControlStateNormal];
+    
+    //Caricamento Risorse (lista Filiali)
+    [self.dataObj loadResources:^{
         
-        [self loadFiliali];
+        NSString *file = [self.dataObj getPathFor:@"filiali" fileType:@"txt" checkOnline:YES];
+        [self loadFiliali:file];
         
     }];
     //Poi il percorso delle risorse si otterrà con:
     //[self.dataObj getPathFor:@"filiali" fileType:@"txt" checkOnline:NO];
-    
-    //Imposta Mappa 1
-    self.title = @"Le Filiali";
-    self.mapView.mapType = MKMapTypeStandard;
 
 }
 
--(void)loadFiliali{
+- (IBAction)handleBackBtn:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:true];
+}
+
+
+-(void)loadFiliali:(NSString*)filiali_path{
     
     NSLog(@"-loadFiliali");
     
@@ -72,8 +91,8 @@
     self.mapView.showsUserLocation = YES;
     
     //Leggi da File (filiali.txt)
-    NSString* filePath = [self.dataObj getPathFor:@"filiali" fileType:@"txt" initRes:NO];
-    NSString* fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    //NSString* filePath = [self.dataObj getPathFor:@"filiali" fileType:@"txt" initRes:NO];
+    NSString* fileContents = [NSString stringWithContentsOfFile:filiali_path encoding:NSUTF8StringEncoding error:nil];
     self.filiali = [fileContents componentsSeparatedByCharactersInSet: [NSCharacterSet newlineCharacterSet]];
     for (NSString *fil in self.filiali){
         NSArray* dati = [fil componentsSeparatedByString:@"," ];
