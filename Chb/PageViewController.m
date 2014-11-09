@@ -108,18 +108,22 @@
     
     thePageViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
+    
     contentViewController = [[ContentViewController alloc] initWithPDF:PDFDocument];
+
     contentViewController.page = [modelArray objectAtIndex:0];
+    
     NSArray *viewControllers = [NSArray arrayWithObject:contentViewController];
-    [thePageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [thePageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self addChildViewController:thePageViewController];
     [self.view addSubview:thePageViewController.view];
     thePageViewController.view.frame = CGRectMake(0, 0,
                                                   self.navigationController.topViewController.view.frame.size.width,
                                                   self.navigationController.topViewController.view.frame.size.height);
-    [thePageViewController didMoveToParentViewController:self];
     
+    [thePageViewController didMoveToParentViewController:self];
+
     //IOS6
      if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -130,7 +134,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:bg];
     
     //self.view.backgroundColor = [UIColor underPageBackgroundColor];
-            
+    
 }
 
 -(void)dealloc {

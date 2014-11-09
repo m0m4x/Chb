@@ -126,41 +126,55 @@
 {
     NSLog(@"-doBtnPressed");
     
-   
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
+    
+    
     self.btn_type = type;
     switch (type) {
         case 100:
         case 200:
         case 400:
         case 600:
+        {
             //webview
-            [self performSegueWithIdentifier: @"btn_web" sender: self];
+            TSPWebViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"view_web"];
+            view.type = 0;
+            view.info = self.btn_type;
+            [self.navigationController pushViewController:view animated:YES];
+        }
             break;
         case 300:
         {
             //bilanci
-            //[self performSegueWithIdentifier: @"btn_bil" sender: self];
-            
             if(self.vc_b == nil){
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                self.vc_b = [storyboard instantiateViewControllerWithIdentifier:@"bilancio"];
+                self.vc_b = [storyboard instantiateViewControllerWithIdentifier:@"view_bilancio"];
                 //[self.vc_b setModalPresentationStyle:UIModalPresentationFullScreen];
                 //[self.vc_b setModalTransitionStyle:ui];
             }
+            [self.navigationController pushViewController:self.vc_b animated:YES];
+            // Modal
             //[self presentModalViewController:self.vc_b animated:YES ];
             //[self presentViewController:self.vc_b animated:YES completion:nil];
-            [self.navigationController pushViewController:self.vc_b animated:YES];
-            
         }
             
             break;
         case 500:
+        {
             //mappa
-            [self performSegueWithIdentifier: @"btn_map" sender: self];
+            TSPWebViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"view_filiali"];
+            [self.navigationController pushViewController:view animated:YES];
+        }
             break;
         case 900:
+        {
             //favorito
-            [self performSegueWithIdentifier: @"btn_web" sender: self];
+            TSPWebViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"view_web"];
+            view.type = 1;
+            view.info_title= [[[[NSUserDefaults standardUserDefaults] objectForKey:@"fav_title"]componentsSeparatedByString:@"." ] objectAtIndex:0];
+            view.info_file= [[NSUserDefaults standardUserDefaults] objectForKey:@"fav_file"];
+            [self.navigationController pushViewController:view animated:YES];
+
+        }
             break;
         default:
             break;
@@ -175,8 +189,10 @@
 }
 
 //Prepare Segue
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"-prepareForSegue");
+    
     if([segue.identifier isEqualToString:@"btn_web"]){
         TSPWebViewController *controller = (TSPWebViewController *)segue.destinationViewController;
         if(self.btn_type == 900){
@@ -192,6 +208,7 @@
 
     }
 }
+*/
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"-viewWillAppear");

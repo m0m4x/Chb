@@ -31,6 +31,8 @@
     //Apri Barra Superiore
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
+    //Cambia Titolo
+
 }
 
 -(void) viewWillDisappear:(BOOL)animated {

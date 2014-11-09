@@ -51,14 +51,18 @@
     self.dataObj.loading = (UIView*) [self.view viewWithTag:50];
     self.dataObj.indicator = (UIActivityIndicatorView*) [self.view viewWithTag:60];
     
+    //self.mapView = (MKMapView*) [self.view viewWithTag:800];
+    
     UIImageView *bg = (UIImageView*) [self.view viewWithTag:3];
     UILabel *label_title = (UILabel *)[self.view viewWithTag:30];
-    
     UIButton *button_back = (UIButton *)[self.view viewWithTag:5];
 
     //Imposta Titolo
-    self.title = @"Le Filiali";
-    label_title.text = @"Le Filiali";
+    self.title = @"filiali";
+    label_title.text = @"filiali";
+    
+    //Imposta bg
+    [bg setImage:[UIImage imageNamed:@"bg_vuoto.png"]];
     
     //Imposta Mappa
     self.mapView.mapType = MKMapTypeStandard;
