@@ -12,12 +12,14 @@
     },
     {
       "idiom" : "iphone",
+      "filename" : "pin_hres_red-2.png",
       "subtype" : "retina4",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "pin_hres_red-1.png"
     }
   ],
   "info" : {

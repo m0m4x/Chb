@@ -19,10 +19,23 @@
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"-touchesBegan");
     
-    //Cambia Immagine
+    //Cambia
+    // Tag all'interno della subview:
+    // 10 testo
+    // 20 sfondo
+    // 30 icona
+    
+    //Imposta Effetto
     for (id subview in self.subviews) {
+        //testo
+        if ([subview isKindOfClass:[UILabel class]] &&
+            [subview tag] == 10) {
+            UILabel *theView = (UILabel*)subview;
+            [theView setTextColor:[UIColor lightGrayColor]];
+        }
+        //icona
         if ([subview isKindOfClass:[UIImageView class]] &&
-            [subview tag] == self.tag + 10) {
+            [subview tag] == 30) {     //self.tag + 10
             UIImageView *theView = (UIImageView*)subview;
             UIImage *image = [UIImage imageNamed:[self imageName:self.tag perEvento:@"off"]];
             [theView setImage:image];
@@ -35,16 +48,24 @@
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"-touchesEnded");
     
-    //Ripristina Immagine
+    //Ripristina Effetti
     for (id subview in self.subviews) {
+        //testo
+        if ([subview isKindOfClass:[UILabel class]] &&
+            [subview tag] == 10) {
+            UILabel *theView = (UILabel*)subview;
+            [theView setTextColor:[UIColor whiteColor]];
+        }
+        //icona
         if ([subview isKindOfClass:[UIImageView class]] &&
-            [subview tag] == self.tag + 10) {
+            [subview tag] == 30) {
             UIImageView *theView = (UIImageView*)subview;
             
             UIImage *image = [UIImage imageNamed:[self imageName:self.tag perEvento:@"on"]];
             
             [theView setImage:image];
         }
+
     }
     
     //Call doBtnPressed

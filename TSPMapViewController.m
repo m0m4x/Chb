@@ -91,8 +91,9 @@
     
     NSLog(@"-loadFiliali");
     
-    //Imposta Mappa 2
-    self.mapView.showsUserLocation = YES;
+    
+    //[CLLocationManager requestWhenInUseAuthorization]
+    //self.mapView.showsUserLocation = YES;
     
     //Leggi da File (filiali.txt)
     //NSString* filePath = [self.dataObj getPathFor:@"filiali" fileType:@"txt" initRes:NO];
@@ -152,6 +153,7 @@
 
 - (void)aggiungiFiliale:(NSString*)address descrizione:(NSString*)descr
 {
+    return;
     NSLog(@"-aggiungiFiliale");
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:address
@@ -184,6 +186,7 @@
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
 {
+    
     NSLog(@"-mapView");
     
     MKAnnotationView *annView = [[MKAnnotationView alloc ] initWithAnnotation:annotation reuseIdentifier:nil];
@@ -195,15 +198,15 @@
         [[[annotation title] lowercaseString] hasPrefix:@"atm avanzato"] |
         [[[annotation title] lowercaseString] hasPrefix:@"bancomat intelligente"] |
         [[[annotation title] lowercaseString] hasPrefix:@"bancomat avanzato"]){
-        annView.image = [ UIImage imageNamed:@"pin_green"];
+        annView.image = [ UIImage imageNamed:@"pin_b"];
     }else if ([[[annotation title] lowercaseString] hasPrefix:@"atm"] |
               [[[annotation title] lowercaseString] hasPrefix:@"bancomat"]){
-        annView.image = [ UIImage imageNamed:@"pin_yellow"];
+        annView.image = [ UIImage imageNamed:@"pin_b"];
     }else if([[[annotation title] lowercaseString] hasPrefix:@"videosportello"] |
              [[[annotation title] lowercaseString] hasPrefix:@"postazione di video"]){
-        annView.image = [ UIImage imageNamed:@"pin_pink"];
+        annView.image = [ UIImage imageNamed:@"pin_b"];
     } else {
-        annView.image = [ UIImage imageNamed:@"pin_red"];
+        annView.image = [ UIImage imageNamed:@"pin_g"];
         
         //se info
         if([self addInfo:[annotation title]]){
@@ -213,11 +216,11 @@
     }
     
     //Marker Dimensions
-    if ( IDIOM == IPAD ) {
+    /*if ( IDIOM == IPAD ) {
         annView.frame = CGRectMake(0, 0, 25, 38);
     } else {
         annView.frame = CGRectMake(0, 0, 15, 26);
-    }
+    }*/
     
     annView.canShowCallout = YES;
     annView.contentMode = UIViewContentModeScaleAspectFit;

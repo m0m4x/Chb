@@ -18,7 +18,6 @@
 @interface TSPWebViewController ()
 
 @property GetData *dataObj;
-
 @property NSString *currentFilename;
 
 @end
@@ -146,7 +145,11 @@
 }
 
 - (IBAction)handleBackBtn:(id)sender {
-    [self.navigationController popViewControllerAnimated:true];
+    if([self.webView canGoBack]){
+        [self.webView goBack];
+    } else {
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 
@@ -171,11 +174,11 @@
     
     NSString *url = [request.URL absoluteString];
     
+    //Check PDF
     NSRange range = [url rangeOfString:@".pdf" options:NSCaseInsensitiveSearch];
     if ( range.location != NSNotFound &&
         range.location + range.length == [url length] )
     {
-        
         //se risorsa esterna
         
         //Scarica PDF

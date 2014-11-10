@@ -57,6 +57,7 @@
     UIImageView *bg = (UIImageView*) [self.view viewWithTag:3];
     UILabel *label_title = (UILabel *)[self.view viewWithTag:30];
     UIButton *button_back = (UIButton *)[self.view viewWithTag:5];
+
     
     //Title
     self.title= @"bilancio";
@@ -65,6 +66,7 @@
     
     //Back Button
     [button_back setImage:[UIImage imageNamed:@"icon-back.png"] forState:UIControlStateNormal];
+
     
     // Do any additional setup after loading the view.
     NSArray *URLs = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
@@ -382,6 +384,8 @@
     NSLog(@"> tableView updateCell (t.%@) cell: %li", [NSThread currentThread] , (long)indexPath.row    );
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"idCell"];
+    cell.backgroundColor = [UIColor clearColor];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"idCell"];
     }
