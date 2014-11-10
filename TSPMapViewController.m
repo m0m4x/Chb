@@ -249,10 +249,41 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view
 calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"accessory button tapped for annotation %@", view.annotation);
+    //NSLog(@"accessory button tapped for annotation %@", view.annotation);
+    
     self.selected = view.annotation.title;
-    [self performSegueWithIdentifier: @"info" sender: self];
+    
+    //Usa Segue (NO)
+    /*[self performSegueWithIdentifier: @"info" sender: self];*/
+    
+    //Crea Webview
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:[[NSBundle mainBundle].infoDictionary objectForKey:@"UIMainStoryboardFile"] bundle:[NSBundle mainBundle]];
+    
+    TSPWebViewController *infoview = [storyboard instantiateViewControllerWithIdentifier:@"view_web"];
+    infoview.type = 1;
+    
+    //Prendi Nome File
+    for (NSString *fil in self.filiali){
+        NSArray* dati = [fil componentsSeparatedByString:@"," ];
+        //0 Nome
+        //1 lat
+        //2 long
+        //3 file
+        if ([dati count] > 3 ){
+            if([[dati objectAtIndex:0] isEqualToString:self.selected]){
+                infoview.info_title = self.selected;
+                infoview.info_file = [dati objectAtIndex:3];
+            }
+        }
+        
+    }
+    
+    //Apri WebView
+    [self.navigationController pushViewController:infoview animated:YES];
+    
 }
+
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSLog(@"-prepareForSegue");
 
@@ -277,6 +308,7 @@ calloutAccessoryControlTapped:(UIControl *)control
     
     
 }
+*/
 
 
 
